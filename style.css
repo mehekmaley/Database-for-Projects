@@ -1659,11 +1659,13 @@ pre {
     .docData span{
       display: block;
     }
-    .docData a{
+     .docData a{
       display: block;
+    } 
+
+    .docData span:hover  {
+      text-decoration: underline;
     }
-
-
     
     .docData a:hover  {
       text-decoration: underline;
@@ -1705,6 +1707,7 @@ pre {
     margin-right: 50px;
     color: #999;
   } 
+  
   .docData div{
     position: absolute;
     top: 0;
@@ -1715,6 +1718,11 @@ pre {
     padding: 10px 0;
     font-weight:  bold;
     cursor:  pointer;
+  }
+  #detail {
+    color: #495057;
+    background-color: #fff;
+    height: 100px;
   }
 select.form-control:focus::-ms-value {
   color: #495057;
@@ -3671,7 +3679,7 @@ input[type="button"].btn-block {
     .navbar-expand-md .navbar-toggler {
       display: none; } }
 
-@media (max-width: 991.98px) {
+@media (max-width: 500px) {
   .navbar-expand-lg > .container,
   .navbar-expand-lg > .container-fluid {
     padding-right: 0;
