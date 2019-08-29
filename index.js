@@ -19,9 +19,14 @@ const titleList = document.querySelector('#title-list');
 const menu = document.querySelector('#menu');
 
 
-function renderTitle(doc){
 
+
+
+function renderTitle(doc){
+    
     let div = document.createElement('div');
+    
+    
     let li = document.createElement('li');
     //let title = document.createElement('a');
     let domain = document.createElement('span');
@@ -42,6 +47,7 @@ function renderTitle(doc){
         console.log(this.id);
         document.getElementById("fourblock").style.display = "none";
         document.getElementById("section-counter").style.display = "none";
+        
         jQuery('<form/>', {
           name: 'detail',
           id: "detail",
@@ -49,10 +55,16 @@ function renderTitle(doc){
           
           }).appendTo(div);
           menu.appendChild(div);
-
+          
+          $('#detail').append("<br/>" + doc.data().domain);
+          $('#detail').append("<br/>" + doc.data().guide);
+          $('#detail').append("<br/>" + doc.data().branch);
+          $('#detail').append("    " + doc.data().class);
+          $('#detail').append("<br/>" + doc.data().score);
+          $('#detail').append("<br/>" + doc.data().year);
       }).appendTo(li);
 
-
+      
     // title.textContent = doc.data().title;
     domain.textContent = doc.data().domain;
     guide.textContent = doc.data().guide;
