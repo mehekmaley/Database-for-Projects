@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <title>Fox University</title>
-    <meta charset="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8" http-equiv="encoding">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -10,6 +11,7 @@
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
+    
     
      <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -21,7 +23,9 @@
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css"> 
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- <link type="text/css" rel="stylesheet" href="css/upload.css"> -->
 	
 	<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-storage.js"></script>
@@ -73,23 +77,75 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Project Title">
+                </div>
+                
+                
+                <div class="form-group">
                     <label>Git Repository</label>
                     <input type="text" class="form-control" id="git_id" placeholder="https://github/project.git">
                 </div>
+                
                 <div class="form-group">
                     <label>Guide Name </label>
                     <input type="text" class="form-control" id="guide" placeholder="Guide or Mentor Name">
                 </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Academic Year</label>
+                        <input type="text" class="form-control" id="acadyear" placeholder="Academic Year">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Score</label>
+                        <input type="number" class="form-control" id="score" placeholder="Score">
+                    </div>
+                </div>
                 <div class="form-group" style="font-weight: normal;">
                     <label>Do you have a Research Paper ?</label><br>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio" checked class="radio"> YES
+                        <input type="radio" name="optradio" checked class="radio" id="yes" value="yes"> YES
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio" class="radio"> NO
+                        <input type="radio" name="optradio" class="radio" id="no" value="no"> NO
                     </label>
                         
                 </div>
+                <div class="form-group" style="font-weight: normal;">
+                    <label>Department</label><br>
+                    <label class="radio-inline">
+                        <input type="radio" name="dept" checked class="radio" id="cs" value="COMPS"> Computer
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="dept" class="radio" id="it" value="IT"> Information Technology
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="dept" class="radio" id="prod" value="PROD"> Production
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="dept" class="radio" id="ex" value="EX"> Electronics
+                    </label>
+                        
+                </div>
+                <div class="form-group" style="font-weight: normal;">
+                    <label>Class</label><br>
+                    <label class="radio-inline">
+                        <input type="radio" name="cl" checked class="radio" id="fe" value="FE"> First Year
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="cl" class="radio" id="se" value="SE"> Second Year
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="cl" class="radio" id="te" value="TE"> Third Year
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="cl" class="radio" id="be" value="BE"> Final Year
+                    </label>
+                        
+                </div>
+                
+                
+                
 
                     <!--For Upload progress Bar-->
                 
@@ -98,18 +154,18 @@
 
 
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                         <label>
                             Project Video
                         </label><br>
                         <input type="file" value="upload" id="fileButton">
                         <progress value="0" max="100" id="uploader">0%</progress>
-                        <!--
+                        
                         <div class="progress-bar progress-bar-striped active" role="progressbar"
                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
                           60%
                         </div>-->
-                </div>
+                <!-- </div>
                 <br>
                 <div class="form-group">
                         <label>
@@ -130,12 +186,12 @@
                         </label><br>
                         <input type="file" value="upload" id="fileButton">
                         <progress value="0" max="100" id="uploader">0%</progress>
-                        <!--
+                        
                         <div class="progress-bar progress-bar-striped active" role="progressbar"
                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
                           60%
                         </div>-->
-                </div>
+                <!--</div>
                 <br>
                 <div class="tag-form" action="#">
                     <ul class="tag-list">
@@ -143,7 +199,7 @@
                                 <input class="tag-input" type="text" placeholder="tag">
                         </li>
                     </ul>
-                </div>
+                </div> -->
             <!--
                 First Name:
             <input type="text" name="f_name" placeholder="First Name"> <br> 
@@ -160,11 +216,57 @@
             <input type="radio" name="research paper" value="No">No<br>
             <input type="submit" value="Submit"><br>
             -->
-            <button type="button" class="btn btn-success">Submit</button>
-          </form>
+        </form>
+        <form class="tag-form" action="#">
+            <ul class="tag-list">
+                <li class="tag-input-wrap">
+                    <input class="tag-input" type="text" placeholder="tag">
+                </li>
+            </ul>
+        </form>
+        <div class="form-group">
+            <label>
+                Project Video
+            </label><br>
+            <input type="file" value="upload" id="fileButtonv">
+            <progress value="0" max="100" id="uploaderv">0%</progress>
+            
+            <!-- <div class="progress-bar progress-bar-striped active" role="progressbar"
+            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+              60%
+            </div> -->
+        </div>
+        <div class="form-group">
+            <label>
+                Project Report in .pdf Extension
+            </label><br>
+            <input type="file" value="upload" id="fileButtonr">
+            <progress value="0" max="100" id="uploaderr">0%</progress>
+            
+            <!-- <div class="progress-bar progress-bar-striped active" role="progressbar"
+            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+              60%
+            </div> -->
+        </div>
+        <div class="form-group">
+            <label>
+                Project Presentation in .pdf Extension
+            </label><br>
+            <input type="file" value="upload" id="fileButtonp">
+            <progress value="0" max="100" id="uploaderp">0%</progress>
+            
+            <!-- <div class="progress-bar progress-bar-striped active" role="progressbar"
+            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+              60%
+            </div> -->
+        </div>
+
+
+            <button type="button" class="btn btn-success" id="sub1">Submit</button>
+          
       </div>
       <script src="js/config.js"></script>    
-      <script src="js/index.js"></script>
+     
       <script src="js/jquery.min.js"></script>
       <script src="js/jquery-migrate-3.0.1.min.js"></script>
       <script src="js/popper.min.js"></script>
@@ -177,8 +279,8 @@
       <script src="js/aos.js"></script>
       <script src="js/jquery.animateNumber.min.js"></script>
       <script src="js/scrollax.min.js"></script>
+      <script src="js/upload.js"></script>
       
-      <script src="js/main.js"></script>
   </body>
 </html>
 <!--
