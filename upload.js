@@ -21,7 +21,7 @@ var guide = document.getElementById("guide");
 var title = document.getElementById("title");
 var score = document.getElementById("score");
 var acadyear = document.getElementById("acadyear");
-
+var domain = document.getElementById("domain");
 var $respaper = document.querySelector('input[name="optradio"]:checked').value;
 var $dept = document.querySelector('input[name="dept"]:checked').value;
 var $cl = document.querySelector('input[name="cl"]:checked').value;
@@ -124,6 +124,7 @@ fileButtonp.addEventListener('change',function(e) {
             class: $cl,
             score: score.value,
             acadyear: acadyear.value,
+            domain: domain.value,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 
             
@@ -144,6 +145,7 @@ fileButtonp.addEventListener('change',function(e) {
          document.getElementById('fileButtonp').value= "";
          document.getElementById('acadyear').value = "";
          document.getElementById('score').value = "";
+         document.getElementById('domain').value = "";
          
         
         
@@ -270,6 +272,7 @@ function reload() {
          document.getElementById('fileButtonp').value= "";
          document.getElementById('acadyear').value = "";
          document.getElementById('score').value = "";
+         document.getElementById('domain').value = "";
 }
 
 
