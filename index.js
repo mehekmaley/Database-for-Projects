@@ -30,11 +30,13 @@ function renderTitle(doc){
     let li = document.createElement('li');
     //let title = document.createElement('a');
     let domain = document.createElement('span');
+   
     let guide = document.createElement('span');
-    let branch = document.createElement('span');
+    let dept = document.createElement('span');
     let cless = document.createElement('span');
-    let year = document.createElement('span');
+    let acadyear = document.createElement('span');
     let score = document.createElement('span');
+    let rsp = document.createElement('span');
     li.setAttribute('data-id',doc.id);
     li.setAttribute('class',"docData");
     jQuery('<a/>', {
@@ -55,24 +57,53 @@ function renderTitle(doc){
           
           }).appendTo(div);
           menu.appendChild(div);
-          
+          jQuery('<h2/>', {
+            name: "he",
+            id: 'domain',
+            html: doc.data().domain,
+          }).appendTo(detail);
+          $('#detail').append("<br/>" + "DOMAIN:::::");
           $('#detail').append("<br/>" + doc.data().domain);
           $('#detail').append("<br/>" + doc.data().guide);
-          $('#detail').append("<br/>" + doc.data().branch);
+          $('#detail').append("<br/>" + doc.data().dept);
           $('#detail').append("    " + doc.data().class);
           $('#detail').append("<br/>" + doc.data().score);
-          $('#detail').append("<br/>" + doc.data().year);
+          $('#detail').append("<br/>" + doc.data().researchpaper);
+          $('#detail').append("<br/>" + doc.data().acadyear);
+          $('#detail').append("<br/>");
+          jQuery('<a/>',{
+            name: 'video',
+            id: "video",
+            html: 'view video',
+            href: doc.data().video,
+          }).appendTo(detail);
+          $('#detail').append("<br/>");
+          jQuery('<a/>',{
+            name: 'video',
+            id: "video",
+            html: 'view report',
+            href: doc.data().report,
+          }).appendTo(detail);
+          $('#detail').append("<br/>");
+          jQuery('<a/>',{
+            name: 'video',
+            id: "video",
+            html: 'view presentation',
+            href: doc.data().presentation,
+          }).appendTo(detail);
+
+
       }).appendTo(li);
 
       
     // title.textContent = doc.data().title;
     domain.textContent = doc.data().domain;
     guide.textContent = doc.data().guide;
-    branch.textContent = doc.data().branch;
+    dept.textContent = doc.data().dept;
     cless.textContent = doc.data().class;
     score.textContent = doc.data().score;
-    year.textContent = doc.data().year;
-    
+    acadyear.textContent = doc.data().acadyear;
+   
     
     
     // title.setAttribute('class',"tlink");
@@ -84,10 +115,10 @@ function renderTitle(doc){
     // li.appendChild(title);
     li.appendChild(domain);
     li.appendChild(guide);
-    li.appendChild(branch);
+    li.appendChild(dept);
     li.appendChild(cless);
     li.appendChild(score);
-    li.appendChild(year);
+    li.appendChild(acadyear);
     
 
     titleList.appendChild(li);
@@ -105,7 +136,7 @@ console.log(lii);
 
 
 
-firebase.firestore().collectionGroup("project").get().then((snapshot) => {
+firebase.firestore().collection("project").get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
       console.log(doc.id);
       renderTitle(doc);
