@@ -1,12 +1,12 @@
+
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-#cont{
-  background-color: #0069d9;
-}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -1367,8 +1367,7 @@ pre {
   .table-bordered thead th,
   .table-bordered thead td {
     border-bottom-width: 2px; }
-
-.table-borderless th,
+ .table-borderless th,
 .table-borderless td,
 .table-borderless thead th,
 .table-borderless tbody + tbody {
@@ -1731,8 +1730,23 @@ pre {
   }
   #detail {
     color: #495057;
-    background-color: #fff;
-    height: 100px;
+    background-color:lightblue;
+    height: 500px;
+
+  }
+
+  th,td{
+    width: 420px; 
+    height: 10px;
+    padding: 10px;
+    background: #f6f6f6;
+    text-align:center; 
+    color: #555;
+    border-right:1px solid #555; 
+    border-left:1px solid #555; 
+    border-top:1px;
+    border-bottom:1px;
+    position: relative;
   }
 select.form-control:focus::-ms-value {
   color: #495057;
@@ -9972,3 +9986,6 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+    
+
